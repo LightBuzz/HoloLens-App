@@ -6,5 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Codeman.unity
+    guid: f8e653f0339ea5742b011ae6a0d0739f
+  - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: e5b434b62222f164c9f3eabb8b184d3f
