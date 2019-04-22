@@ -7,39 +7,7 @@ The following tools are required to work with this project
 * [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/)
 * [Unity LTS 2017.4](https://unity.com/)
 
-## Code ##
-```
-using HoloToolkit.Unity.InputModule;
-using UnityEngine;
-
-public class InteractiveObject : MonoBehaviour, IFocusable, IInputClickHandler
-{
-    private bool hasFocus = false;
-    private float rotationSpeed = 2f;
-    private float scaleModifier = 1.025f;
-
-    private void Update()
-    {
-        if (hasFocus)
-            transform.Rotate(new Vector3(0f, rotationSpeed, 0f), Space.World);
-    }
-
-    public void OnFocusEnter()
-    {
-        hasFocus = true;
-    }
-
-    public void OnFocusExit()
-    {
-        hasFocus = false;
-    }
-
-    public void OnInputClicked(InputClickedEventData eventData)
-    {
-        Vector3 currentScale = transform.localScale;
-        currentScale *= scaleModifier;
-        transform.localScale = currentScale;
-    }
-}
-
-```
+## Scenes ##
+* Cube - Checks whether an object has focus and is clicked.
+* Codeman - Same as cube but with our very own Codeman that changes animation when clicked.
+* SpatialMapping - Listens to air-tap events and places Codeman on top of objects

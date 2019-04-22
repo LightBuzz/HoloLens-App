@@ -35,8 +35,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4897896724767164}
   - component: {fileID: 95589511891770432}
-  - component: {fileID: 114242073387242852}
   - component: {fileID: 136018002436247144}
+  - component: {fileID: 114174303416211388}
+  - component: {fileID: 114076975372237768}
   m_Layer: 0
   m_Name: CodeMan
   m_TagString: Untagged
@@ -902,7 +903,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114242073387242852
+--- !u!114 &114076975372237768
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -911,6 +912,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 297a8b22215292247a5657d384259add, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114174303416211388
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1107968715507372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f966ba8ea93cfb641ba25abd11425bb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!136 &136018002436247144

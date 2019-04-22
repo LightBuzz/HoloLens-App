@@ -1,30 +1,30 @@
 ﻿using HoloToolkit.Unity.InputModule;
 using UnityEngine;
 
-public class ChangeAnimation : MonoBehaviour, IFocusable, IInputClickHandler
+[RequireComponent(typeof(ConsumeInputClickHandler))]
+public class ChangeAnimation : MonoBehaviour
 {
-    private bool hasFocus = false;
+    private ConsumeInputClickHandler consumeInputClickHandler;
     private Animator animator;
     private int animatorNextTrigger = Animator.StringToHash("Next");
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        consumeInputClickHandler = GetComponent<ConsumeInputClickHandler>();
+
+        consumeInputClickHandler.OnInputClickedEvent += OnClicked;
     }
 
-    public void OnFocusEnter()
+    private void OnDestroy()
     {
-        hasFocus = true;
+        consumeInputClickHandler.OnInputClickedEvent -= OnClicked;
     }
 
-    public void OnFocusExit()
+    private void OnClicked(InputClickedEventData eventData)
     {
-        hasFocus = false;
-    }
+        animator.SetTrigger(animatorNextTrigger);
 
-    public void OnInputClicked(InputClickedEventData eventData)
-    {
-        if(hasFocus)
-            animator.SetTrigger(animatorNextTrigger);
+        eventData.Use();
     }
 }
