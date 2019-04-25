@@ -11,3 +11,4 @@ The following tools are required to work with this project
 * Cube - Checks whether an object has focus and is clicked.
 * Codeman - Same as cube but with our very own Codeman that changes animation when clicked.
 * SpatialMapping - Listens to air-tap events and places Codeman on top of objects
+* SpatialMapping Pathfinding - Dynamically builds navigation mesh on spatial mapping and Codeman walks on it with pathfinding.

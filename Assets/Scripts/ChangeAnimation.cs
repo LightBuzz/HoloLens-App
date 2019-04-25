@@ -26,5 +26,7 @@ public class ChangeAnimation : MonoBehaviour
         animator.SetTrigger(animatorNextTrigger);
 
         eventData.Use();
+
+        Logger.Info("new animation");
     }
 }

@@ -8,13 +8,8 @@ public class PlacingManager : MonoBehaviour, IInputClickHandler
 
     private void Start()
     {
+        // Don't forget to remove it when done
         InputManager.Instance.PushFallbackInputHandler(gameObject);
-    }
-
-    private void OnDestroy()
-    {
-        if (InputManager.Instance != null)
-            InputManager.Instance.PopFallbackInputHandler();
     }
 
     /// <summary>
@@ -42,7 +37,7 @@ public class PlacingManager : MonoBehaviour, IInputClickHandler
         return false;
     }
 
-    public void PlaceObject()
+    public virtual void PlaceObject()
     {
         Vector3 positionToPlace;
         Transform camTransform = Camera.main.transform;
@@ -59,7 +54,7 @@ public class PlacingManager : MonoBehaviour, IInputClickHandler
             // Used for debug
             if (Application.isEditor)
             {
-                Debug.Log("No hit found");
+                Logger.Warning("No hit found");
                 
                 positionToPlace = camTransform.position + camTransform.forward * 2f;
 
@@ -68,7 +63,7 @@ public class PlacingManager : MonoBehaviour, IInputClickHandler
         }
     }
 
-    private void InstantiateObject(Vector3 position, Vector3 rotation)
+    protected void InstantiateObject(Vector3 position, Vector3 rotation)
     {
         Instantiate(objectToPlace, position, Quaternion.Euler(rotation));
     }
